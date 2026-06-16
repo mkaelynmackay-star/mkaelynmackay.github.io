@@ -1,0 +1,217 @@
+:root {
+  --ink: #17202a;
+  --paper: #fffdf8;
+  --cream: #f6efe3;
+  --sage: #708d81;
+  --sage-dark: #3f5f54;
+  --clay: #bb6b4a;
+  --gold: #d9a441;
+  --line: rgba(23, 32, 42, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body,
+p,
+li,
+a,
+button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.navbar-brand {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+  color: var(--sage-dark);
+}
+
+a:hover {
+  color: var(--clay);
+}
+
+.navbar {
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar-brand {
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.nav-link {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--clay);
+}
+
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(217, 164, 65, 0.18), transparent 28rem),
+    radial-gradient(circle at 90% 40%, rgba(112, 141, 129, 0.18), transparent 28rem),
+    var(--paper);
+  overflow: hidden;
+}
+
+.eyebrow {
+  color: var(--clay);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.display-title {
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.hero-copy {
+  max-width: 42rem;
+  color: #4f585f;
+  font-size: 1.13rem;
+}
+
+.hero-art {
+  filter: drop-shadow(0 24px 30px rgba(23, 32, 42, 0.15));
+}
+
+.btn-brand {
+  background: var(--sage-dark);
+  border: 1px solid var(--sage-dark);
+  color: white;
+}
+
+.btn-brand:hover {
+  background: #2f4940;
+  border-color: #2f4940;
+  color: white;
+}
+
+.btn-outline-brand {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn-outline-brand:hover {
+  background: var(--ink);
+  color: white;
+}
+
+.section-space {
+  padding: 6rem 0;
+}
+
+.section-heading {
+  max-width: 42rem;
+}
+
+.soft-section {
+  background: var(--cream);
+}
+
+.feature-card,
+.resume-card {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 12px 30px rgba(23, 32, 42, 0.06);
+  height: 100%;
+}
+
+.feature-number {
+  display: inline-grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  font-weight: 800;
+}
+
+.skill-chip {
+  display: inline-block;
+  margin: 0.25rem 0.25rem 0 0;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(63, 95, 84, 0.25);
+  border-radius: 999px;
+  background: rgba(112, 141, 129, 0.10);
+  color: var(--sage-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.4rem;
+  border-left: 2px solid rgba(112, 141, 129, 0.35);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -0.43rem;
+  top: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--clay);
+}
+
+.resume-title {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  letter-spacing: -0.035em;
+}
+
+.resume-section {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.resume-section:first-child {
+  border-top: 0;
+}
+
+.footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer a {
+  color: white;
+}
+
+@media (max-width: 767.98px) {
+  .section-space {
+    padding: 4rem 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 6.5rem 0 4rem;
+  }
+}

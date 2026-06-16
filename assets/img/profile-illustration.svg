@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+<title id="title">Creative professional illustration</title>
+<desc id="desc">A notebook, soccer ball, pencil, and abstract leaves arranged in a circular composition.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f6efe3"/>
+    <stop offset="1" stop-color="#dce8e2"/>
+  </linearGradient>
+</defs>
+<circle cx="360" cy="360" r="315" fill="url(#bg)"/>
+<circle cx="360" cy="360" r="285" fill="none" stroke="#17202a" stroke-width="3" stroke-dasharray="8 14" opacity=".25"/>
+<path d="M148 476c-22-99 7-191 84-254 72-59 162-74 247-38" fill="none" stroke="#708d81" stroke-width="30" stroke-linecap="round" opacity=".35"/>
+<rect x="188" y="160" width="330" height="410" rx="24" fill="#fffdf8" stroke="#17202a" stroke-width="7" transform="rotate(-5 353 365)"/>
+<line x1="245" y1="260" x2="455" y2="242" stroke="#bb6b4a" stroke-width="10" stroke-linecap="round"/>
+<line x1="242" y1="315" x2="457" y2="297" stroke="#708d81" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+<line x1="239" y1="365" x2="447" y2="347" stroke="#708d81" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+<line x1="236" y1="415" x2="415" y2="399" stroke="#708d81" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+<g transform="translate(475 438)">
+  <circle r="110" fill="#fff" stroke="#17202a" stroke-width="8"/>
+  <polygon points="0,-38 36,-12 22,32 -22,32 -36,-12" fill="#17202a"/>
+  <path d="M0-38 0-88M36-12 86-28M22 32 55 75M-22 32-55 75M-36-12-86-28" stroke="#17202a" stroke-width="8"/>
+  <path d="M0-88c31 0 57 10 86 60M86-28c11 36 3 70-31 103M55 75c-39 25-76 25-110 0M-55 75c-34-33-42-67-31-103M-86-28c29-50 55-60 86-60" fill="none" stroke="#17202a" stroke-width="7"/>
+</g>
+<g transform="translate(135 180) rotate(-20)">
+  <rect x="0" y="0" width="38" height="240" rx="16" fill="#d9a441"/>
+  <polygon points="0,240 38,240 19,288" fill="#f0d1a4"/>
+  <polygon points="13,272 25,272 19,288" fill="#17202a"/>
+  <rect x="0" y="0" width="38" height="35" rx="12" fill="#bb6b4a"/>
+</g>
+<path d="M575 130c42 6 66 30 71 72-43-5-67-29-71-72Z" fill="#708d81"/>
+<path d="M610 104c-2 39-19 66-53 81 1-40 19-67 53-81Z" fill="#bb6b4a"/>
+</svg>

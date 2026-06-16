@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Story and soccer field illustration</title>
+<desc id="desc">An abstract soccer field at sunset with notebook pages floating overhead.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e99b59"/>
+    <stop offset=".55" stop-color="#f5d9a6"/>
+    <stop offset="1" stop-color="#8fb2ad"/>
+  </linearGradient>
+  <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#527c54"/>
+    <stop offset="1" stop-color="#234d32"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="560" fill="url(#sky)"/>
+<circle cx="1280" cy="175" r="95" fill="#fff0bd" opacity=".88"/>
+<rect y="560" width="1600" height="340" fill="url(#field)"/>
+<path d="M800 560v340M0 730h1600" stroke="#fff" stroke-width="8" opacity=".65"/>
+<circle cx="800" cy="730" r="112" fill="none" stroke="#fff" stroke-width="8" opacity=".65"/>
+<rect x="62" y="635" width="210" height="190" fill="none" stroke="#fff" stroke-width="8" opacity=".65"/>
+<rect x="1328" y="635" width="210" height="190" fill="none" stroke="#fff" stroke-width="8" opacity=".65"/>
+<g fill="#fffdf8" stroke="#14213d" stroke-width="6" opacity=".92">
+  <path d="M245 155q90-45 180 0v170q-90-40-180 0Z"/>
+  <path d="M425 155q90-45 180 0v170q-90-40-180 0Z"/>
+</g>
+<g stroke="#b4532a" stroke-width="8" stroke-linecap="round" opacity=".75">
+  <line x1="286" y1="210" x2="389" y2="190"/>
+  <line x1="286" y1="255" x2="385" y2="235"/>
+  <line x1="460" y1="195" x2="565" y2="218"/>
+  <line x1="460" y1="240" x2="557" y2="262"/>
+</g>
+<g transform="translate(1070 660)">
+  <circle r="64" fill="#fff" stroke="#14213d" stroke-width="8"/>
+  <polygon points="0,-22 21,-7 13,19 -13,19 -21,-7" fill="#14213d"/>
+  <path d="M0-22 0-53M21-7 51-17M13 19 33 45M-13 19-33 45M-21-7-51-17" stroke="#14213d" stroke-width="7"/>
+</g>
+</svg>

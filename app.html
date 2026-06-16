@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A single-page creative momentum activity generator.">
+  <title>Creative Momentum Generator</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #15202b;
+      --paper: #fffaf2;
+      --violet: #6554c0;
+      --mint: #dff4e8;
+      --peach: #ffd9c8;
+      --line: rgba(21, 32, 43, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, var(--peach), transparent 26rem),
+        radial-gradient(circle at 85% 80%, var(--mint), transparent 28rem),
+        var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      width: min(900px, 100%);
+    }
+
+    .top-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--violet);
+      font-weight: 700;
+    }
+
+    .app-shell {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 24px 65px rgba(21, 32, 43, 0.13);
+    }
+
+    header {
+      padding: 2rem;
+      color: white;
+      background: var(--ink);
+    }
+
+    header p {
+      max-width: 620px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    h1 {
+      margin: 0 0 0.7rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 7vw, 4.5rem);
+      line-height: 1;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-weight: 800;
+    }
+
+    select, button {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 0.75rem;
+      font: inherit;
+    }
+
+    select {
+      padding: 0 0.75rem;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .action-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0.8rem;
+      padding: 0 2rem 2rem;
+    }
+
+    button {
+      border: 0;
+      padding: 0.8rem 1rem;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    #generate {
+      background: var(--violet);
+      color: white;
+    }
+
+    #generate:hover { background: #5141a8; }
+
+    #timerButton {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+    }
+
+    .result {
+      min-height: 240px;
+      margin: 0 2rem 2rem;
+      padding: 2rem;
+      border-radius: 1.1rem;
+      background: #f7f4ff;
+      border: 1px solid rgba(101, 84, 192, 0.18);
+    }
+
+    .result h2 {
+      margin-top: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-right: 0.35rem;
+      margin-bottom: 0.8rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      background: var(--mint);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .timer {
+      font-size: 2rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .small {
+      color: #5e6871;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 700px) {
+      .controls { grid-template-columns: 1fr; }
+      .action-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top-links">
+      <a href="scratch.html">← Back to scratch page</a>
+      <a href="index.html">Professional site</a>
+    </div>
+
+    <section class="app-shell">
+      <header>
+        <h1>Creative Momentum Generator</h1>
+        <p>Choose a focus, the time you have, and your current energy. The app will build a practical challenge to help you start instead of overthinking.</p>
+      </header>
+
+      <div class="controls">
+        <div>
+          <label for="focus">Focus</label>
+          <select id="focus">
+            <option value="writing">Writing</option>
+            <option value="soccer">Soccer</option>
+            <option value="marketing">Marketing</option>
+            <option value="surprise">Surprise me</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="minutes">Time available</label>
+          <select id="minutes">
+            <option value="5">5 minutes</option>
+            <option value="10" selected>10 minutes</option>
+            <option value="20">20 minutes</option>
+            <option value="30">30 minutes</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="energy">Energy level</label>
+          <select id="energy">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button id="generate" type="button">Generate my challenge</button>
+        <button id="timerButton" type="button">Start timer</button>
+      </div>
+
+      <section class="result" aria-live="polite">
+        <span class="badge" id="focusBadge">Writing</span>
+        <span class="badge" id="timeBadge">10 minutes</span>
+        <h2 id="challengeTitle">Your first challenge is ready.</h2>
+        <p id="challengeText">Choose your options and select “Generate my challenge.”</p>
+        <p class="small" id="reflection">Reflection prompt: What is one thing you want to notice while you work?</p>
+        <div class="timer" id="timer" hidden>10:00</div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const challengeBank = {
+      writing: {
+        low: [
+          ["Tiny Scene", "Write six sentences about a person arriving somewhere they did not expect to be."],
+          ["Sensory List", "List ten specific sights, sounds, textures, or smells from a place you remember."]
+        ],
+        medium: [
+          ["Change the Point of View", "Write one short event twice: first from the confident person’s view, then from the nervous person’s view."],
+          ["Start With Motion", "Draft an opening paragraph that begins with a physical action instead of background information."]
+        ],
+        high: [
+          ["Constraint Draft", "Write a complete micro-story with a beginning, turn, and ending. Do not use the word “was.”"],
+          ["Voice Experiment", "Create a monologue in a voice unlike your own. Let the speaker reveal something without stating it directly."]
+        ]
+      },
+      soccer: {
+        low: [
+          ["First-Touch Reset", "Complete controlled touches in a small space, alternating feet and keeping your eyes up every third touch."],
+          ["Visualization Reps", "Mentally rehearse five game situations and picture your first decision in each one."]
+        ],
+        medium: [
+          ["Three-Move Sequence", "Build a repeatable sequence using a first touch, change of direction, and pass or finish."],
+          ["Scanning Challenge", "During ball work, call out an object in the room or field before every third touch."]
+        ],
+        high: [
+          ["Pressure Circuit", "Cycle through quick feet, a change of direction, and a finish. Track clean repetitions, not just speed."],
+          ["Weak-Foot Mission", "Use only your weaker foot for the session and finish with ten accurate target passes."]
+        ]
+      },
+      marketing: {
+        low: [
+          ["Headline Sprint", "Write ten headlines for one ordinary product. Make each headline appeal to a different customer need."],
+          ["Audience Snapshot", "Describe one ideal customer in five lines: goal, frustration, fear, hope, and next action."]
+        ],
+        medium: [
+          ["Mini Campaign", "Create a three-post sequence: attention, value, and invitation. Keep each post under 40 words."],
+          ["Benefit Rewrite", "Choose five product features and rewrite each one as a customer-centered benefit."]
+        ],
+        high: [
+          ["Launch Concept", "Create a campaign idea with a name, promise, visual direction, three content pieces, and one call to action."],
+          ["Brand Voice Test", "Write the same announcement in three voices: playful, premium, and warm. Decide which fits best and explain why."]
+        ]
+      }
+    };
+
+    const reflections = [
+      "What felt easier after you started?",
+      "Which choice created the most momentum?",
+      "What would you keep, cut, or change next time?",
+      "What did you notice that you would have missed by waiting?",
+      "What is the smallest useful next step?"
+    ];
+
+    const focusSelect = document.getElementById("focus");
+    const minutesSelect = document.getElementById("minutes");
+    const energySelect = document.getElementById("energy");
+    const generateButton = document.getElementById("generate");
+    const timerButton = document.getElementById("timerButton");
+    const timerDisplay = document.getElementById("timer");
+
+    let intervalId = null;
+    let secondsRemaining = Number(minutesSelect.value) * 60;
+
+    function randomItem(items) {
+      return items[Math.floor(Math.random() * items.length)];
+    }
+
+    function resolvedFocus() {
+      const chosen = focusSelect.value;
+      if (chosen !== "surprise") return chosen;
+      return randomItem(["writing", "soccer", "marketing"]);
+    }
+
+    function generateChallenge() {
+      const focus = resolvedFocus();
+      const energy = energySelect.value;
+      const minutes = Number(minutesSelect.value);
+      const [title, base] = randomItem(challengeBank[focus][energy]);
+
+      const pacing = minutes <= 5
+        ? "Keep it rough and finish one small version."
+        : minutes <= 10
+          ? "Spend the first two minutes planning, then work without editing."
+          : minutes <= 20
+            ? "Use the final three minutes to review and improve one detail."
+            : "Divide the session into planning, focused work, and a short review.";
+
+      document.getElementById("focusBadge").textContent =
+        focus.charAt(0).toUpperCase() + focus.slice(1);
+      document.getElementById("timeBadge").textContent = minutes + " minutes";
+      document.getElementById("challengeTitle").textContent = title;
+      document.getElementById("challengeText").textContent = base + " " + pacing;
+      document.getElementById("reflection").textContent =
+        "Reflection prompt: " + randomItem(reflections);
+
+      resetTimer();
+    }
+
+    function renderTimer() {
+      const minutes = Math.floor(secondsRemaining / 60);
+      const seconds = secondsRemaining % 60;
+      timerDisplay.textContent =
+        String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+    }
+
+    function resetTimer() {
+      clearInterval(intervalId);
+      intervalId = null;
+      secondsRemaining = Number(minutesSelect.value) * 60;
+      renderTimer();
+      timerDisplay.hidden = true;
+      timerButton.textContent = "Start timer";
+    }
+
+    function toggleTimer() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+        timerButton.textContent = "Resume timer";
+        return;
+      }
+
+      timerDisplay.hidden = false;
+      timerButton.textContent = "Pause timer";
+      intervalId = setInterval(() => {
+        secondsRemaining -= 1;
+        renderTimer();
+
+        if (secondsRemaining <= 0) {
+          clearInterval(intervalId);
+          intervalId = null;
+          timerButton.textContent = "Restart timer";
+          timerDisplay.textContent = "Done!";
+        }
+      }, 1000);
+    }
+
+    generateButton.addEventListener("click", generateChallenge);
+    timerButton.addEventListener("click", () => {
+      if (secondsRemaining <= 0) resetTimer();
+      toggleTimer();
+    });
+    minutesSelect.addEventListener("change", resetTimer);
+
+    generateChallenge();
+  </script>
+</body>
+</html>

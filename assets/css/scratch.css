@@ -1,0 +1,192 @@
+:root {
+  --navy: #14213d;
+  --sand: #f5ead6;
+  --rust: #b4532a;
+  --field: #486b4a;
+  --sky: #eaf3f8;
+  --white: #fffefb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--navy);
+  background: var(--sand);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.scratch-header {
+  min-height: 88vh;
+  display: grid;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+  background:
+    linear-gradient(115deg, rgba(20, 33, 61, 0.94), rgba(20, 33, 61, 0.58)),
+    url("../img/story-field.svg") center/cover no-repeat;
+}
+
+.scratch-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20, 33, 61, 0.78);
+}
+
+.scratch-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.scratch-nav a:hover {
+  text-decoration: underline;
+}
+
+.hero-inner {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.kicker {
+  color: #f2c879;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.scratch-header h1 {
+  max-width: 850px;
+  margin: 0.2rem 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.98;
+}
+
+.hero-inner p {
+  max-width: 650px;
+  font-size: 1.15rem;
+}
+
+.scratch-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  background: var(--rust);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.scratch-button:hover {
+  background: #8f3f1e;
+}
+
+.content-wrap {
+  width: min(1060px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.story-block {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(20, 33, 61, 0.08);
+}
+
+.story-block h2 {
+  margin-top: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.lesson-card {
+  padding: 1.2rem;
+  border-top: 5px solid var(--rust);
+  border-radius: 0.75rem;
+  background: var(--sky);
+}
+
+.lesson-card h3 {
+  margin-top: 0;
+}
+
+.media-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 0.9rem;
+  background: #ddd;
+}
+
+.tableau-frame {
+  width: 100%;
+  min-height: 680px;
+  border: 0;
+  border-radius: 0.9rem;
+  background: white;
+}
+
+.callout {
+  padding: 1.4rem;
+  border-left: 6px solid var(--field);
+  background: #edf3e9;
+}
+
+.scratch-footer {
+  padding: 2rem;
+  text-align: center;
+  background: var(--navy);
+  color: white;
+}
+
+.scratch-footer a {
+  color: #f2c879;
+}
+
+@media (max-width: 800px) {
+  .three-column {
+    grid-template-columns: 1fr;
+  }
+
+  .scratch-nav {
+    position: static;
+  }
+
+  .scratch-header {
+    padding: 0;
+  }
+
+  .hero-inner {
+    padding: 5rem 1.2rem;
+  }
+
+  .tableau-frame {
+    min-height: 520px;
+  }
+}
